@@ -36,6 +36,12 @@ public class Ejecutor1 {
         System.out.println("----------------------");
         System.out.println(rd);
         
+        System.out.println("Lista de Estudiante ");
+        
+        for (int i = 0; i < listaDistancia.size(); i++) {
+            listaDistancia.get(i).calcularMatriculaDistancia();
+        }
+           
     }
 }
 

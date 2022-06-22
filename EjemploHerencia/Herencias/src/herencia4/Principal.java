@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class Principal {
     public static void main(String[] args) {
         
+        
         Estudiante est1 = new Estudiante("René", "Elizalde", 33, 100.2);
         Docente doc1 = new Docente("José", "Hincapié", 40, 1000); 
         Policia pol1 = new Policia("María", "MENDOZA", 35, "Cabo");
@@ -29,22 +30,38 @@ public class Principal {
         listaDocentes.add(doc2);
         
         ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
-        // agregar elementos
+        listaEstudiantes.add(est1);
+        listaEstudiantes.add(est2);
         
-        
-        ArrayList<Policia> listaPolicias = new ArrayList<>();
-        // agregar elementos
-        
+        ArrayList<Policia> listaPolicia = new ArrayList<>();
+        listaPolicia.add(pol1);
+        listaPolicia.add(pol2);
         
         ReporteDocente rd = new ReporteDocente("0001Doc");
+        rd.setLista(listaDocentes);
+        rd.setPromedioSueldos();
         
         ReporteEstudiante re = new ReporteEstudiante("0001Est");
+        re.setLista(listaEstudiantes);
+        re.setPromedioMatriculas();
         
-        ReportePolicia rp = new ReportePolicia("0001Pol");
+        ReportePolicia rp = new ReportePolicia("0001Pol",listaPolicia);
+        rp.setLista(listaPolicia);
+        rp.setPromedioEdades();
         
+        System.out.println("------------------");
+        System.out.println("");
         System.out.println(rd);
+        System.out.println("");
+        System.out.println("------------------");
         System.out.println(re);
+        System.out.println("");
+        System.out.println("");
+        System.out.println("------------------");
         System.out.println(rp);
-        
+        System.out.println("");
+        System.out.println("");
+        System.out.println("------------------");
+        System.out.println(rd);
     }
 }
